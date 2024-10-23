@@ -1,0 +1,23 @@
+
+const mainInfo = document.getElementById('main-info');
+const content = document.getElementById('main-content');
+
+async function handleResize() {
+    if (window.innerWidth < 809) {
+        mainInfo.style.animation = 'stretch 0.5s forwards, borderAppear 1s forwards';
+        await new Promise(resolve => setTimeout(resolve, 700));
+        document.getElementById('toggle-groups').addEventListener('click', function() {
+            const mainContent = document.getElementById('main-content');
+            mainContent.classList.toggle('show');
+        });
+    } else {
+        mainInfo.style.animation = '';
+    }
+}
+
+window.addEventListener('resize', handleResize);
+
+handleResize();            
+
+
+            mainInfo.style.animation = 'compress 0.5s forwards';

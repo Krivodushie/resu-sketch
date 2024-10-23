@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Резюме | Krivodushie</title>
+        <link rel="icon" href="/icons/favicon.ico" sizes="16x16" type="image/x-icon">    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+
+:root {
+--scrl-1: #332f3c;
+--scrl-2: #8d5353;
+--inpt-1: #2e2c31;
+--inpt-2: #2e2c31;
+--bttn-1: #2e2c31;
+
+--bckg-1: #544c7d;
+--bckg-2: #746c9d;
+--bckg-3: #806792;
+--bckg-4: #4a4273;
+
+--brdr-1: #f0f2f5;
+--brdr-2: #3a393e;
+--brdr-3: #3f3768;
+
+--txt-1: #f0f2f5;
+--txt-2: #dedede;
+--txt-3: #bd5e5e;
+--txt-4: #bcb7c2;
+--txt-5: #a99bbf; }
+
+
+#main-info div {
+    position: relative;
+    left: 0px;
+}
+
+#main-info {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #f0f2f5;
+    font-size: 1.45em;
+    float: left;
+    width: 310px;
+    min-height: 3000px;
+    padding: 20px;
+    background-color: var(--bckg-2);
+    border-right: 3px solid var(--brdr-3);
+    z-index: 2;
+    position: absolute;
+}
+#main-info a {
+    color: var(--txt-1); 
+}
+#main-content {
+    color: var(--txt-1);
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    left: 353px; 
+    width: calc(100% - 353px);
+    z-index: 1;
+    animation: slide-left 0.45s ease-in-out;
+}
+
+#avatar {
+    width: 300px;
+    height: 300px;
+    /* border: 3px solid var(--brdr-3); */
+    border-radius: 100%;
+    background-color: #4d4576;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.butts {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+    background-color: var(--bckg-3);
+    border: var(--brdr-3) solid 3px;
+    color: black;
+}
+
+#group-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.item {
+    display: inline-grid;
+    background-color: var(--bckg-4);
+    width: clamp(400px, 45%, 800px);
+    height: 130px;
+    /* border: solid 2.5px var(--brdr-3); */
+    color: var(--txt-2);
+    border-radius: 10px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.item span {
+    text-align: justify;
+    font-size: 14.5px;
+}
+.item:hover {
+    background-color: #403964;
+    transition: background-color 0.3s ease;
+    color: #dadada;
+}
+
+
+
+
+
+
+
+/* Не меняется */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Не меняется */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+/* Не меняется */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bckg-1); 
+}
+/* Не меняется */
+#content {
+    height: 100vh;
+}
+
+
+/* НЕ МЕНЯЕТСЯ */
+#avatar img {
+    width: 97.5%;
+    height: 97.5%;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 0;
+    background-color: var(--brdr-1);
+    position: relative;
+}
+
+
+/* НЕ МЕНЯЕТСЯ */
+#group-content > div {
+    display: none;
+}
+/* НЕ МЕНЯЕТСЯ */
+#toggle-groups {
+    font-size: 30px;
+}
+
+/* НЕ МЕНЯЕТСЯ */
+.toggle-header {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--txt-1);
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+/* НЕ МЕНЯЕТСЯ */
+.toggle-header.active {
+    color: var(--txt-1);
+    transition: color 0.4s ease;
+}
+/* НЕ МЕНЯЕТСЯ */
+.toggle-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6.5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brdr-1);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+/* НЕ МЕНЯЕТСЯ*/
+.toggle-header.active::after {
+    transform: scaleX(0.95);
+}
+/* НЕ МЕНЯЕТСЯ */
+.toggle-header.previous {
+    opacity: 0.5;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+/* НЕ МЕНЯЕТСЯ */
+.toggle-header.previous.active {
+    opacity: 1;
+}
+
+/* НЕ МЕНЯЕТСЯ */
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9fd;
+}
+/* НЕ МЕНЯЕТСЯ */
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--bckg-3);
+}
+/* НЕ МЕНЯЕТСЯ */
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+@keyframes stretch {
+    0% {
+        width: 310px;
+        height: 100%;
+        border-right: solid 3px var(--brdr-3);
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-right: solid 3px transparent;
+    }
+}
+@keyframes compress {
+    0% {
+        width: 100%;
+        height: 3000px;
+    }
+    100% {
+        width: 310px;
+        height: 3000px;
+    }
+}
+@keyframes heightmin {
+    0% {
+        width: 100%;
+        height: 2000px;
+    }
+    100% {
+        width: 100%;
+        height: 400px;
+    }
+}
+@keyframes heightmax {
+    0% {
+        width: 100%;
+        height: 400px;
+    }
+    100% {
+        width: 100%;
+        height: 3000px;
+    }
+}
+@keyframes borderAppear {
+    0% {
+        border-bottom: solid 3px transparent;
+    }
+    100% {
+        border-bottom: solid 3px var(--brdr-3);
+    }
+}
+
+
+
+
+@keyframes heightChange {
+    from {
+        width: 100%;
+        height: auto;
+    }
+    to {
+        height: 200px;
+        width: 100%;
+    }
+}
+
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#main-info div {
+    position: absolute;
+    width: 320px;
+}
+        </style>
+    </head>
+    <body>
+        <div id="content">
+        <div id="main-info">
+            <span class="info" id="avatar"><img src="sad-hamster.png" alt="Аватар"></span><br>
+            <div>
+            <span class="info" id="vacancy">■ Frontend-разработчик</span><br>
+            <span class="info" id="name">■ Имя: Роман Б.</span><br>
+            <span class="info" id="nickname">■ Псевдоним: Krivodushie</span><br>
+            <span class="info" id="exp">■ Опыт: Более 2-х лет</span><br>
+            <span class="info" id="telegram">■ Telegram: <a href="https://t.me/krivodushie" target="_blank">@krivodushie</a></span><br>
+            <span class="info" id="github">■ GitHub: <a href="https://github.com/krivodushie" target="_blank">Krivodushie</a></span><br>
+            <button class="butts" id="theme-switcher">
+                Тема
+            </button>
+            <button class="butts" id="language-switcher">
+                Язык
+            </button>
+        </div>
+        </div>
+        <div id="main-content">
+            <div id="toggle-groups">
+                <span class="toggle-header" id="hards-toggle">HARD SKILLS</span> <span class="toggle-header" id="softs-toggle">SOFT SKILLS</span> <span class="toggle-header" id="experience-toggle">ОПЫТ РАБОТЫ</span>
+            </div>
+
+            <div id="group-content">
+                <div id="hards-content" class="tab-content">
+                    <div class="item" id="js">
+                        <h2>JavaScript/TypeScript</h2>
+                        <span>Владею как JavaScript, так и TypeScript на уровне выше среднего. Приходилось решать очень нестандартные для веб-программиста задачи в ходе реализации некоторых проектов.</span>
+                    </div>
+                    <div class="item">
+                        <h2>React/Svelte</h2>
+                        <span>Владею такими фреймворками-библиотеками для JS, как React и Svelte. Использовал их в ходе разработки в проекте Kinwoods, в личных заказах и в личных учебных проектах.</span>
+                    </div>
+                    <div class="item">
+                        <h2>HTML/CSS</h2>
+                        <span>Пишу понятную, красивую и семантическую вёрстку. Использую нативный CSS, но при необходимости могу адаптироваться к препроцессорам.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Вёрстка</h2>
+                        <span>Верстаю сайты с использованием всех вышеописанных технологий и умею создавать удобные адаптивные кроссбраузерные и кроссплатформенные интерфейсы.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Node.js</h2>
+                        <span>На уровне ведомого работал с Node.js в ходе работы с проектом Kinwoods. Знаю базовый синтаксис и функции, необходимые для минимального взаимодействия на уровне фронтенда.</span>
+                    </div>
+                    <div class="item">
+                        <h2>PostgreSQL</h2>
+                        <span>Работал с PostgreSQL в ходе работы с проектом Kinwoods. Знаю, как записывать и извлекать значения из баз данных.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Docker</h2>
+                        <span>Свободно работаю с Docker для контейнеризации приложений, создания и управления образами, а также для упрощения развертывания и масштабирования приложений в различных средах. Имею опыт работы с Docker Compose для управления многоконтейнерными приложениями.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Redis</h2>
+                        <span>Имею опыт работы с Redis в качестве высокопроизводительного хранилища данных. Использую его для кэширования, управления сессиями и реализации очередей сообщений, что позволяет значительно ускорить доступ к данным и повысить производительность приложений.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Prometheus</h2>
+                        <span>Работаю с Prometheus для мониторинга и сбора метрик приложений. Знаю, как настраивать алерты и визуализировать данные с помощью Grafana, что позволяет эффективно отслеживать производительность и состояние систем в реальном времени.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Protocol Buffers (protobuf)</h2>
+                        <span>Использую Protocol Buffers для сериализации данных, что позволяет создавать компактные и эффективные сообщения для обмена между сервисами. Знаю, как интегрировать protobuf в проекты на Node.js.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Тесты на Mocha и Applitools</h2>
+                        <span>Умею тестировать приложения с использованием <span title="моча.">Mocha</span> для написания юнит-тестов и Applitools для визуальных и e2e тестов интерфейса, что позволяет находить ошибки и гарантировать высокое качество UX.</span>
+                    </div>
+                </div>
+                <div id="softs-content" class="tab-content">
+                    <div class="item">
+                        <h2>Командная работа</h2>
+                        <span>Умею контактировать с людьми и работать в команде, легко нахожу общий язык с новыми людьми.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Ответственность</h2>
+                        <span>Подхожу к выполнению задач ответственно и всегда стараюсь сдать выполнение в сроки дедлайна.</span>
+
+                    </div>
+                    <div class="item">
+                        <h2>Готовность к обучению</h2>
+                        <span>Готов (и рад) изучать и улучшать новые навыки в составе новой команды и всегда стараюсь стать лучше в своём любимом деле.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Критическое мышление</h2>
+                        <span>Умею хорошо анализировать и оценивать полученную информацию, делать выводы и принимать обоснованные решения.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Целеустремлённость</h2>
+                        <span>Стремлюсь всегда завершать все задачи качественно и в срок.</span>
+                    </div>
+                    <div class="item">
+                        <h2>Умение разрешать конфликты</h2>
+                        <span>При необходимости, из-за наличия организационного опыта, умею конструктивно разешать конфликты в коллективе и помочь людям прийти к компромиссам.</span>
+
+                    </div>
+                    <div class="item">
+                        <h2>Креативность</h2>
+                        <span>Я обладаю способностью генерировать нестандартные идеи и подходы к решению задач. В ходе работы над CatWar Script и Kinwoods я часто предлагал и реализовывал оригинальные решения, которые помогали улучшить функциональность и пользовательский опыт.</span>
+
+                    </div>
+                    <div class="item">
+                        <h2>Развитое чувство юмора</h2>
+                        <span>Понравится, конечно, не всем и не всегда, потому что часто мой юмор бывает слишком чёрным, но постараюсь держать в коллективе позитивный настрой! <small>Мне нужно было заполнить страничку побольше чтобы она выглядела красивее в плане дизайна, поэтому читайте примеры того, с чего мне смешно на свой страх и риск. Это не характеризует меня как человека в целом, так что прошу не делать выводы на мой счёт исходя из моего чувства юмора :(.</small></span>
+                    </div>
+
+                </div>
+                <div id="experience-content" class="tab-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="app.js"></script>
+        <script>
+
+const icon = document.getElementById('avatar');
+const audio = new Audio('sad-hamster.mp3');
+
+icon.addEventListener('mouseenter', () => {
+    audio.volume = 0.3;
+    audio.play();
+    let volume = 0.3;
+    const targetVolume = 1;
+    const duration = 4000;
+    const interval = 50;
+    const increment = (targetVolume - volume) / (duration / interval);
+
+    const volumeInterval = setInterval(() => {
+        volume += increment;
+        if (volume >= targetVolume) {
+            volume = targetVolume;
+            clearInterval(volumeInterval);
+        }
+        audio.volume = volume;
+    }, interval);
+});
+
+icon.addEventListener('mouseleave', () => {
+    audio.pause();
+    audio.currentTime = 0;
+});
+
+const tabs = document.querySelectorAll('.toggle-header');
+const contents = document.querySelectorAll('#group-content > div');
+
+function switchTab(activeTab) {
+    tabs.forEach((tab, index) => {
+        if (tab === activeTab) {
+            tab.classList.add('active');
+            tab.classList.remove('previous');
+            contents[index].style.display = 'block';
+            localStorage.setItem('activeTab', tab.id);
+        } else {
+            tab.classList.remove('active');
+            tab.classList.add('previous');
+            contents[index].style.display = 'none';
+        }
+    });
+}
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => switchTab(tab));
+});
+
+const activeTabId = localStorage.getItem('activeTab') || 'hards-toggle';
+const activeTab = document.getElementById(activeTabId);
+if (activeTab) {
+    switchTab(activeTab);
+}
+function createFloatingPlusOne() {
+const avatar = document.querySelector('#avatar img');
+
+avatar.addEventListener('click', (e) => {
+const plus = document.createElement('div');
+plus.innerText = '+1';
+plus.style.cssText = `
+position: fixed;
+left: ${e.clientX}px;
+top: ${e.clientY}px;
+color: #fff;
+pointer-events: none;
+font-size: 40px;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+transition: all 1s ease-out;
+opacity: 1;
+z-index: 1000;
+`;
+
+document.body.appendChild(plus);
+
+requestAnimationFrame(() => {
+plus.style.transform = 'translateY(-100px)';
+plus.style.opacity = '0';
+});
+
+setTimeout(() => {
+plus.remove();
+}, 1000);
+});
+}
+
+document.addEventListener('DOMContentLoaded', createFloatingPlusOne);
+
+let isPhoneDevice = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+    .test(navigator.userAgent)) {
+        isPhoneDevice = true;
+}
+
+if (isPhoneDevice) {
+    console.log('Это телепхоун') 
+} else {
+    console.log('Это компьюутер')
+}
+
+
+const mainInfo = document.getElementById('main-info');
+const items = document.querySelectorAll('.item');
+const content = document.getElementById('main-content');
+const infoContent = document.querySelector('#main-info div');
+let govno = false;
+async function handleResize() {
+    if(!isPhoneDevice) {
+    if (!govno) {
+        if (window.innerWidth < 809) {
+            govno = true;
+            mainInfo.style.animation = 'stretch 0.5s forwards, borderAppear 0.5s forwards';
+            mainInfo.style.position = 'relative';
+            mainInfo.style.minHeight = 'auto';
+            mainInfo.style.height = 'auto';
+            mainInfo.style.transition = 'height 0.3s ease';
+            
+            await  new Promise(resolve => setTimeout(resolve, 400));
+            infoContent.style.position = 'fixed;'
+            infoContent.style.right = '20px'
+            infoContent.style.top = '20px'
+            mainInfo.style.animation = 'heightmin 0.5s forwards';
+            mainInfo.style.border = ''
+            content.style.width = '100%';
+            content.style.height = 'auto';
+            content.style.top = 'auto';
+            content.style.left = 'auto';
+            content.style.position = 'relative';
+            content.style.animation = 'slide-up 0.5s ease-in-out';
+            mainInfo.style.borderBottom = 'solid 3px var(--brdr-3)'
+            console.log('Переключение на ВЕРТИКАЛЬНУЮ ориентацию')
+        } else {
+            console.log('Пизда')
+        }
+    }
+    if (govno) {
+        if (window.innerWidth >= 809) {
+            govno = false;
+            mainInfo.style.animation = 'heightmax 0.5s forwards';
+            await  new Promise(resolve => setTimeout(resolve, 400));
+            mainInfo.style.animation = 'compress 0.5s forwards';
+            console.log('Переключение на ГОРИЗОНТАЛЬНУЮ ориентацию')
+        } else {
+            console.log('Хуй')
+        }
+    }
+} else {
+    if (!govno) {
+        const avatar = document.getElementById('avatar');
+        const infoContent = document.querySelector('#main-info div');
+            govno = true;
+            mainInfo.style.position = 'relative';
+            mainInfo.style.minHeight = 'auto';
+            mainInfo.style.height = '480px';
+            mainInfo.style.width = '100%';
+            mainInfo.style.border = ''
+            mainInfo.style.borderBottom = 'solid 3px var(--brdr-3)'
+
+
+            avatar.style.height = '465px'
+            avatar.style.width = '465px'
+
+            infoContent.style.position = 'absolute';
+            infoContent.style.top = '100px';
+            infoContent.style.right = '50px'
+            infoContent.style.display = 'inline-block'
+            infoContent.style.fontSize = '31px'
+            infoContent.style.width = '430px'
+
+            content.style.width = '100%';
+            content.style.animation = '0'
+            content.style.transition = '0'
+            content.style.height = 'auto';
+            content.style.top = 'auto';
+            content.style.left = 'auto';
+            content.style.position = 'relative';
+            console.log('Переключение на ВЕРТИКАЛЬНУЮ ориентацию')
+    }
+}
+}
+
+
+window.addEventListener('resize', handleResize);
+
+handleResize();
+        </script>
+    </body>
+</html>
